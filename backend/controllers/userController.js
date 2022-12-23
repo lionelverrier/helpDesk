@@ -25,11 +25,12 @@ if(userExists){
 const salt = await bcrypt.genSalt(10);
 const hashedPassword = await bcrypt.hash(password, salt);
 
+
 //Create user
 const user = await User.create({
   name,
   email,
-  password:hashedPassword
+  password: hashedPassword
 })
 
 if(user){
